@@ -22,11 +22,10 @@ export class AddCarPage implements OnInit {
   }
   
   constructor(public navCtrl: NavController) {
-    //console.log(this.navCtrl)
  }
 
   addCar(){
-    console.log(this.car)
+    this.navCtrl.navigateForward('/list');
   }
 
   ngOnInit() {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../cars/Car';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-edit-car',
@@ -20,10 +21,13 @@ export class EditCarPage implements OnInit {
     icon: 'car'
   }
 
-  constructor() { 
+  constructor(public navCtrl: NavController) { 
   }
 
   ngOnInit() {
   }
 
+  saveTodo(){
+    this.navCtrl.navigateForward('/list');
+  }
 }
