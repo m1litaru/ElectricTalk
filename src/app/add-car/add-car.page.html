@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="ion-padding">
   <ion-list lines="full">
     <ion-item>
       <ion-label>Company</ion-label>
@@ -25,9 +25,6 @@
       <ion-label>Autonomy</ion-label>
       <ion-input type="number" placeholder="Autonomy" slot="end" [(ngModel)]="car.autonomy"></ion-input>
     </ion-item>
-    <!--<ion-item>
-      <ion-input required type="number" min="0" max="10" placeholder="Battery Left"></ion-input>
-    </ion-item>-->
     <ion-item>
       <div>Last Technical Revision</div>
       <ion-datetime required display-format="DD-MMM-YYYY" min="2018" placeholder="Date" [(ngModel)]="car.las"></ion-datetime>
