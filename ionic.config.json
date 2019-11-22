@@ -1,5 +1,7 @@
 {
   "name": "ElectricTalk",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
