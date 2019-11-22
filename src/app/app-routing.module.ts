@@ -16,6 +16,13 @@ const routes: Routes = [
     loadChildren: () => import('./cars/list/list.module').then(m => m.ListPageModule)
   },
   {
+    path: 'add-car',
+    loadChildren: () => import('./add-car/add-car.module').then( m => m.AddCarPageModule)
+  },
+  {
+    path: 'edit-car',
+    loadChildren: () => import('./edit-car/edit-car.module').then( m => m.EditCarPageModule)
+  },
     path: 'login',
     loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
   },
@@ -27,6 +34,7 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule)
   }
+
 ];
 
 @NgModule({

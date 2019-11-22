@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { Car } from 'src/app/models/car';
 
 @Component({
@@ -9,7 +10,7 @@ import { Car } from 'src/app/models/car';
 export class ListPage implements OnInit {
   private selectedItem: any;
   public cars: Array<Car> = [];
-  constructor() {
+  constructor(public navCtrl: NavController) {
     for (let i = 1; i < 11; i++) {
       this.cars.push({
         model: "aaa",  
@@ -23,6 +24,10 @@ export class ListPage implements OnInit {
         icon: 'car'
       });
     }
+  }
+
+  goToPage(path: string) {
+    this.navCtrl.navigateForward(path);
   }
 
   ngOnInit() {
