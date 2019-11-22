@@ -20,6 +20,11 @@ export class AppComponent {
       title: 'Owned Vehicles',
       url: '/list',
       icon: 'car'
+    },
+    {
+      title: 'Auth',
+      url: '/auth',
+      icon: 'power'
     }
   ];
 
