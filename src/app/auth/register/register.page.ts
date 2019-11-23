@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import axios from 'axios';
 import { User } from 'src/app/models/user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NavController } from '@ionic/angular';
@@ -27,7 +26,6 @@ export class RegisterPage implements OnInit {
   }
 
   registerRequest(){
-    let user: User;
     console.log(this.user)
     let data_register = {
       email: this.user.email,

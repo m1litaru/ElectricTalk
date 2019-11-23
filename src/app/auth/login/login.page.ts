@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import axios from 'axios';
 import { NavController } from '@ionic/angular';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-login',
@@ -13,25 +14,35 @@ export class LoginPage implements OnInit {
     email: "",
     password: ""
   };
-  constructor(public navCtrl: NavController) { }
+  constructor(private http: HttpClient, public navCtrl: NavController) { }
 
   ngOnInit() {
-  }
-
-  login(){
-    console.log(this.user)
-    axios({
-      method: 'post',
-      url: 'http://192.168.6.62:5060/api/Auth/Register',
-      data: {
-        email: this.user.email,
-        password: this.user.password
-      }
-    });
   }
 
   goToPage(path: string) {
     this.navCtrl.navigateForward(path);
   }
 
+  loginRequest(){
+    console.log(this.user)
+    let data_register = {
+      email: this.user.email,
+      password: this.user.password
+    }
+    let header_register = {
+      headers: new HttpHeaders({
+        "accept": "text/plain",
+        'TEAM_KEY': "BA7HSEYKGEGFY",
+        'Content-Type': 'application/json-patch+json'
+      })
+    }
+
+    this.http.post("/api/Auth/Login", data_register ,header_register)
+    .subscribe(data => {
+      console.log(data);
+      this.goToPage('/list');
+    }, error => {
+      console.log(error);
+    });
+  }
 }
