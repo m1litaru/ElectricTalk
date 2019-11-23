@@ -1,7 +1,7 @@
 export class Car {
 
     constructor(public model: string, public company: string, public year: number, public autonomy: number,
-       public batteryLeft: string, public lastTechRevision: string, public userId: string, public id: string, public icon: string){
+       public batteryLeft: number, public lastTechRevision: string, public userId: string, public id: string, public icon: string){
 
     }
 

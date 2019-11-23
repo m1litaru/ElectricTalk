@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginPage implements OnInit {
     email: "",
     password: ""
   };
-  constructor() { }
+  constructor(public navCtrl: NavController) { }
 
   ngOnInit() {
   }
@@ -27,6 +28,10 @@ export class LoginPage implements OnInit {
         password: this.user.password
       }
     });
+  }
+
+  goToPage(path: string) {
+    this.navCtrl.navigateForward(path);
   }
 
 }

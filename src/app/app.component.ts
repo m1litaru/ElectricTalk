@@ -22,11 +22,6 @@ export class AppComponent {
       icon: 'car'
     },
     {
-      title: 'Auth',
-      url: '/auth',
-      icon: 'power'
-    },
-    {
       title: 'Forum',
       url: '/forum',
       icon: 'chatboxes'

@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: AuthPage
+  },  {
+    path: 'edit-account',
+    loadChildren: () => import('./edit-account/edit-account.module').then( m => m.EditAccountPageModule)
   }
+
 ];
 
 @NgModule({
