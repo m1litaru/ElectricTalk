@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Storage } from '@ionic/storage';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -36,7 +38,9 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private storage: Storage,
+    private http: HttpClient,
   ) {
     this.initializeApp();
   }
@@ -47,4 +51,26 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+
+  obtainGravatar() {
+    // console.log(md5("dnielhort@gmail.com"));
+    this.storage.get("token")
+    .then(token => {
+      let header_register = {
+        headers: new HttpHeaders({
+          "accept": "application/json",
+          "Authorization": "Bearer " + token,
+          'TEAM_KEY': "BA7HSEYKGEGFY"
+        })
+      }
+
+      this.http.get("/api/Auth/Me", header_register)
+        .subscribe(data => {
+          console.log(data);
+        }, error => {
+        console.log(error);
+      });
+    });
+  }
+  
 }

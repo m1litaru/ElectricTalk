@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginPage implements OnInit {
     email: "",
     password: ""
   };
-  constructor(private http: HttpClient, public navCtrl: NavController) { }
+  constructor(private http: HttpClient, public navCtrl: NavController,  public storage: Storage) { }
 
   ngOnInit() {
   }
@@ -39,7 +40,7 @@ export class LoginPage implements OnInit {
     this.http.post("/api/Auth/Login", data_register ,header_register)
     .subscribe(data => {
       console.log(data);
-      console.log(this.appComponent.appPages)
+      this.storage.set("token",data['token']);
       this.goToPage('/list');
     }, error => {
       console.log(error);

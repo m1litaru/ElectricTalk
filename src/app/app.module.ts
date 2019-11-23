@@ -22,7 +22,7 @@ import { IonicStorageModule } from '@ionic/storage';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(),
-    IonicStorageModule,
+    IonicStorageModule.forRoot(),
     AppRoutingModule
   ],
   providers: [
