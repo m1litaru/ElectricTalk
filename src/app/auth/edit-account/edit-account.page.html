@@ -1,9 +1,28 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>edit-account</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button defaultHref="/home"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Edit Account Info
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="ion-padding">  
+  <ion-grid>
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input readonly type="email" slot="end" placeholder="email" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Firstname</ion-label>
+      <ion-input type="text" slot="end" placeholder="First Name" [(ngModel)]="user.firstName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Lastname</ion-label>
+      <ion-input type="text" slot="end" placeholder="Last Name" [(ngModel)]="user.lastName"></ion-input>
+    </ion-item>
+  </ion-grid>
+  <ion-button color="primary" expand="full" shape="round" class="login" strong="true" (click)="updateInfo()">Update Info</ion-button> 
 </ion-content>
