@@ -36,8 +36,8 @@ export class AddCarPage implements OnInit {
         model: this.car.model,
         year: this.car.year,
         autonomy: this.car.autonomy,
-        lastTechRevision: this.car.lastTechRevision,
-        batteryLeft: 100
+        lastTechRevision: new Date(this.car.lastTechRevision).toLocaleDateString(),
+        batteryLeft: 1
       }
 
       let header_car = {

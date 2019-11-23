@@ -9,3 +9,10 @@ img{
     margin: 30px 0 30px 50px;
     border-radius: 100px;
 }
+ion-content{
+    --background: url("../assets/image/HomeBackground.jpg");
+}
+
+ion-grid{
+    opacity: 85%;
+}
