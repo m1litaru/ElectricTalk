@@ -25,6 +25,11 @@ export class AppComponent {
       title: 'Auth',
       url: '/auth',
       icon: 'power'
+    },
+    {
+      title: 'Stations',
+      url: '/stations',
+      icon: 'map'
     }
   ];
 
