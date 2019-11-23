@@ -33,13 +33,6 @@ export class HomePage implements OnInit{
       })
     }
 
-    var headers_register = new HttpHeaders();
-    headers_register.append("Accept", 'text/plain');
-    headers_register.append('Content-Type', 'application/json-patch+json');
-    headers_register.append('TEAM_KEY','BA7HSEYKGEGFY');
-    console.log(postData_register);
-    console.log(httpOptions_register);
-    console.log(headers_register);
     this.http.post("/api/Auth/Register", postData_register,httpOptions_register)
       .subscribe(data => {
         console.log(data['_body']);

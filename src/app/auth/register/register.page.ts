@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
 import { User } from 'src/app/models/user';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -10,28 +12,50 @@ import { User } from 'src/app/models/user';
 export class RegisterPage implements OnInit {
 
   private user = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: ""
+    firstName: "qwgq",
+    lastName: "gwqq",
+    email: "qwq@f.com",
+    password: "A@#$FWEFWEgr21"
   };
-  constructor() { }
+  constructor(private http: HttpClient, private navCtrl: NavController) { }
 
   ngOnInit() {
   }
 
-  register(){
-    console.log(this.user)
-    axios({
-      method: 'post',
-      url: 'http://192.168.6.62:5060/api/Auth/Register',
-      data: {
-        firstName: this.user.firstName,
-        lastName: this.user.lastName,
-        email: this.user.email,
-        password: this.user.password
-      }
-    });
+  goToPage(path: string) {
+    this.navCtrl.navigateForward(path);
   }
 
+  registerRequest(){
+    let user: User;
+    console.log(this.user)
+    let data_register = {
+      email: this.user.email,
+      password: this.user.password,
+      firstName: this.user.firstName,
+      lastName: this.user.lastName
+    }
+    let header_register = {
+      headers: new HttpHeaders({
+        "accept": "text/plain",
+        'TEAM_KEY': "BA7HSEYKGEGFY",
+        'Content-Type': 'application/json-patch+json'
+      })
+    }
+
+    this.http.post("/api/Auth/Register", data_register ,header_register)
+    .subscribe(data => {
+      let new_user: User =  {
+        email : data_register.email,
+        password : data_register.password,
+        firstname : data_register.firstName,
+        lastname : data_register.lastName,
+        token : data['token']
+      }
+      this.goToPage('/login');
+      console.log(new_user);
+    }, error => {
+      console.log(error);
+    });
+  }
 }
