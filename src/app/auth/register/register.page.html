@@ -14,19 +14,19 @@
     <ion-grid>
       <ion-item>
         <ion-label>Email</ion-label>
-        <ion-input type="email" slot="end" placeholder="email" [(ngModel)]="user.email"></ion-input>
+        <ion-input required type="email" slot="end" placeholder="email" [(ngModel)]="user.email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Password</ion-label>
-        <ion-input type="password" slot="end" placeholder="password" [(ngModel)]="user.password"></ion-input>
+        <ion-input required type="password" slot="end" placeholder="password" [(ngModel)]="user.password"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Firstname</ion-label>
-        <ion-input type="text" slot="end" placeholder="First Name" [(ngModel)]="user.firstName"></ion-input>
+        <ion-input required type="text" slot="end" placeholder="First Name" [(ngModel)]="user.firstName"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Lastname</ion-label>
-        <ion-input type="text" slot="end" placeholder="Last Name" [(ngModel)]="user.lastName"></ion-input>
+        <ion-input required type="text" slot="end" placeholder="Last Name" [(ngModel)]="user.lastName"></ion-input>
       </ion-item>
     </ion-grid>
     <ion-button color="primary" expand="full" shape="round" class="login" strong="true" (click)="registerRequest()">Register</ion-button> 

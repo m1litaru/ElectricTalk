@@ -8,8 +8,10 @@
       </ion-header>
       <ion-content>
         <div>
-          <img src="http://s.gravatar.com/avatar/41a314741fb8ba18b9fe5734510cb0bb?s=80"/>
-          <!-- this.profilePicture = "https://www.gravatar.com/avatar/" + md5(this.email.toLowerCase(), 'hex'); -->
+          <img src="{{gravatarUrl}}"/>
+          <ion-item class="user-name" (click)="goToPage('/edit-account')">
+            {{userName}}
+          </ion-item>
         </div>
         <ion-list>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
