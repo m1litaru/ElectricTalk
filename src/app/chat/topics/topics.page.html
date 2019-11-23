@@ -10,5 +10,15 @@
   </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-item (click)="goToPage('/messages')" *ngFor="let topic of topics">
+      <ion-icon [name]='car' slot="start"></ion-icon>
+      Militaru
+    </ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/add-topic" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+   </ion-fab-button>
+  </ion-fab>
 </ion-content>
