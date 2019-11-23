@@ -17,11 +17,11 @@ const routes: Routes = [
   },
   {
     path: 'add-car',
-    loadChildren: () => import('./add-car/add-car.module').then( m => m.AddCarPageModule)
+    loadChildren: () => import('./cars/add-car/add-car.module').then( m => m.AddCarPageModule)
   },
   {
     path: 'edit-car',
-    loadChildren: () => import('./edit-car/edit-car.module').then( m => m.EditCarPageModule)
+    loadChildren: () => import('./cars/edit-car/edit-car.module').then( m => m.EditCarPageModule)
   },
   {
     path: 'login',
@@ -34,7 +34,21 @@ const routes: Routes = [
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule)
+  },
+  {
+    path: 'forum',
+    loadChildren: () => import('./chat/forum/forum.module').then( m => m.ForumPageModule)
+  },
+  {
+    path: 'add-category',
+    loadChildren: () => import('./chat/add-category/add-category.module').then( m => m.AddCategoryPageModule)
+  },
+  {
+    path: 'topics',
+    loadChildren: () => import('./chat/topics/topics.module').then( m => m.TopicsPageModule)
   }
+
+
 
 ];
 

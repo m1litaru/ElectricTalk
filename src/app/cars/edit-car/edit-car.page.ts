@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Car } from '../cars/Car';
+import { Car } from '../Car';
 import { NavController } from '@ionic/angular';
 
 @Component({
