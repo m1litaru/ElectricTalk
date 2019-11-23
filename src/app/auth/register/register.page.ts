@@ -18,11 +18,15 @@ export class RegisterPage implements OnInit {
     email: "qwq@f.com",
     password: "A@#$FWEFWEgr21"
   };
-  constructor(private http: HttpClient, private navCtrl: NavController, private storage: Storage) { }
+  constructor(
+    private http: HttpClient,
+    private navCtrl: NavController,
+    private storage: Storage
+    ) { }
 
   ngOnInit() {
   }
-  
+
   registerRequest(){
     let data_register = {
       email: this.user.email,
