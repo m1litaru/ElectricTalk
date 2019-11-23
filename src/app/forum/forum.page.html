@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Forum
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="goToPage('/category')" *ngFor="let categ of categories">
+        <ion-icon [name]='categ.icon' slot="start"></ion-icon>
+        {{categ.title}}
+      </ion-item>
+    </ion-list>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button routerLink="/add-category" routerDirection="forward">
+        <ion-icon name="add"></ion-icon>
+     </ion-fab-button>
+    </ion-fab>
+  </ion-content>
+  

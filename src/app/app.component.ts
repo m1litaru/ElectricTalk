@@ -25,6 +25,11 @@ export class AppComponent {
       title: 'Auth',
       url: '/auth',
       icon: 'power'
+    },
+    {
+      title: 'Forum',
+      url: '/forum',
+      icon: 'chatboxes'
     }
   ];
 
