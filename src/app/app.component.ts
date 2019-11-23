@@ -19,7 +19,7 @@ export class AppComponent {
   public link: string = "https://s.gravatar.com/avatar/1c3245e1fc158558fdae158bd52355d2?s=80";
   public appPages = [
     {
-      title: 'User',
+      title: 'Home',
       url: '/home',
       icon: 'home'
     },
@@ -90,7 +90,6 @@ export class AppComponent {
       });
     });
   }
-  
   goToPage(path: string){
     this.navCtrl.navigateForward(path);
   }
