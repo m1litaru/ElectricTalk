@@ -12,11 +12,7 @@ export class ForumPage implements OnInit {
   private selectedItem: any;
   public categories: Array<Category> = [];
   constructor(public navCtrl: NavController) {
-    for (let i = 1; i < 11; i++) {
-      this.categories.push({
-        title: "Category No."+i
-      });
-    }
+
   }
 
   goToPage(path: string) {
