@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="primary">
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
@@ -10,16 +10,12 @@
   </ion-header>
   
   <ion-content>
-    <ion-list>
+    <ion-grid>
       <ion-item (click)="goToPage('/topics')" *ngFor="let categ of categories">
-        <ion-icon [name]='categ.icon' slot="start"></ion-icon>
+        <ion-icon [name]='icon' slot="start"></ion-icon>
         {{categ.title}}
       </ion-item>
-    </ion-list>
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button routerLink="/add-category" routerDirection="forward">
-        <ion-icon name="add"></ion-icon>
-     </ion-fab-button>
-    </ion-fab>
+    </ion-grid>
+    <ion-button expand="full" shape="round" strong="true" position="fixed">Add category</ion-button>
   </ion-content>
   

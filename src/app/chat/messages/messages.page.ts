@@ -8,11 +8,12 @@ import { Message } from 'src/app/models/Message';
 })
 export class MessagesPage implements OnInit {
 
+  public icon: string = "list";
   public messages: Array<Message> = [];
   constructor() {
-    for (let i = 1; i < 11; i++) {
+    for (let i = 1; i < 15; i++) {
       this.messages.push({
-        title: "Title" + i,
+        title: "Adi" + i,
         content: "ambnc"
       });
     } 
