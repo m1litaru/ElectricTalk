@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { Car } from '../cars/Car';
+import { Car } from '../Car';
 
 @Component({
   selector: 'app-add-car',

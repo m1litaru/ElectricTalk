@@ -27,6 +27,11 @@ export class AppComponent {
       icon: 'power'
     },
     {
+      title: 'Forum',
+      url: '/forum',
+      icon: 'chatboxes'
+    },
+    {
       title: 'Stations',
       url: '/stations',
       icon: 'map'
