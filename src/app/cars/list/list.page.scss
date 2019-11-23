@@ -1,1 +1,14 @@
-
+ion-content{
+    --background: url("../../../assets/image/HomeBackground.jpg");  
+}
+ion-list{
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 80%;
+}
+img{
+    height: 100px;
+    margin-right: 25px;
+    opacity: 100%;
+}

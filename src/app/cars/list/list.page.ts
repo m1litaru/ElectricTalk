@@ -11,17 +11,17 @@ export class ListPage implements OnInit {
   private selectedItem: any;
   public cars: Array<Car> = [];
   constructor(public navCtrl: NavController) {
-    for (let i = 1; i < 11; i++) {
+    for (let i = 1; i < 6; i++) {
       this.cars.push({
         model: "aaa",  
         company: i%4 ? 'BMW' : 'Opel',
         year: 2019,
         autonomy: 0,
-        batteryLeft: "25%",
+        batteryLeft: 0.25,
         lastTechRevision: new Date().toLocaleDateString(),
         userId: 'mmm',
         id: 'myId',
-        icon: 'car'
+        icon: 'https://img.pngio.com/2018-bmw-3-series-bmw-x5-car-bmw-1-series-bmw-png-download-bmw-mpng-900_680.jpg'
       });
     }
   }

@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+    loadChildren: () => import('./auth/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'list',
@@ -32,10 +32,6 @@ const routes: Routes = [
     loadChildren: () => import('./auth/register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule)
-  },
-  {
     path: 'forum',
     loadChildren: () => import('./chat/forum/forum.module').then( m => m.ForumPageModule)
   },
@@ -50,14 +46,15 @@ const routes: Routes = [
   {
     path: 'messages',
     loadChildren: () => import('./chat/messages/messages.module').then( m => m.MessagesPageModule)
-  },  {
+  },
+  {
     path: 'stations',
     loadChildren: () => import('./stations/stations.module').then( m => m.StationsPageModule)
+  },
+  {
+    path: 'edit-account',
+    loadChildren: () => import('./auth/edit-account/edit-account.module').then( m => m.EditAccountPageModule)
   }
-
-
-
-
 ];
 
 @NgModule({

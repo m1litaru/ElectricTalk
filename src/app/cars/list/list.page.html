@@ -12,14 +12,26 @@
 <ion-content>
   <ion-list>
     <ion-item (click)="goToPage('/edit-car')" *ngFor="let car of cars">
-      <ion-icon [name]='car.icon' slot="start"></ion-icon>
-      {{car.company}} {{car.model}}
-      <div class="item-note" slot="end">
-        {{car.batteryLeft}}
-        <div class="item-note" slot="end">
-          {{car.lastTechRevision}}
-        </div>
-      </div>
+      <img src="{{car.icon}}" alt="W3Schools.com">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            {{car.company}}
+          </ion-col>
+          <ion-col>
+            <ion-progress-bar value={{car.batteryLeft}}>
+            </ion-progress-bar>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            {{car.model}}
+          </ion-col>
+          <ion-col>
+            {{car.lastTechRevision}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-item>
   </ion-list>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

@@ -4,14 +4,14 @@
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
       <ion-title>
-        Login
+        ElectricTalk
       </ion-title>
     </ion-toolbar>
   </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-list lines="full" >
-    <ion-item>
+  <ion-grid>
+    <ion-item class="input100">
       <ion-label>Email</ion-label>
       <ion-input type="email" slot="end" placeholder="Email"></ion-input>
     </ion-item>
@@ -19,6 +19,7 @@
           <ion-label>Password</ion-label>
           <ion-input type="password" slot="end" placeholder="Password"></ion-input>
     </ion-item>
-  </ion-list>
-    <ion-button color="primary" expand="full" class="login">Login</ion-button> 
+  </ion-grid>
+  <ion-button color="primary" expand="full" shape="round" class="login" strong="true" (click)="goToPage('/edit-account')">Login</ion-button>
+  <ion-button color="primary" expand="full" shape="round" strong="true" (click)="goToPage('/register')">Don't have an account? Sign up!</ion-button> 
 </ion-content>

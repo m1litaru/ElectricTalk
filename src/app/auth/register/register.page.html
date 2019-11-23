@@ -4,31 +4,31 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Register
+      Sign up on ElectricTalk!
     </ion-title>
   </ion-toolbar>
 </ion-header>
   
   <ion-content class="ion-padding">
   
-    <ion-list lines="full" >
+    <ion-grid>
       <ion-item>
         <ion-label>Email</ion-label>
-        <ion-input type="email" slot="end" placeholder="Email" [(ngModel)]="user.email"></ion-input>
+        <ion-input type="email" slot="end" placeholder="email" [(ngModel)]="user.email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Password</ion-label>
-        <ion-input type="password" slot="end" placeholder="Password" [(ngModel)]="user.password"></ion-input>
+        <ion-input type="password" slot="end" placeholder="password" [(ngModel)]="user.password"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Firstname</ion-label>
-        <ion-input type="text" slot="end" placeholder="Firstname" [(ngModel)]="user.firstName"></ion-input>
+        <ion-input type="text" slot="end" placeholder="First Name" [(ngModel)]="user.firstName"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Lastname</ion-label>
-        <ion-input type="text" slot="end" placeholder="Lastname" [(ngModel)]="user.lastName"></ion-input>
+        <ion-input type="text" slot="end" placeholder="Last Name" [(ngModel)]="user.lastName"></ion-input>
       </ion-item>
-    </ion-list>
-    <ion-button color="primary" expand="full" class="login" (click)="register()">Register</ion-button> 
+    </ion-grid>
+    <ion-button color="primary" expand="full" shape="round" class="login" strong="true" (click)="register()">Register</ion-button> 
 </ion-content>
   
