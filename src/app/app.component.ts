@@ -30,6 +30,11 @@ export class AppComponent {
       title: 'Forum',
       url: '/forum',
       icon: 'chatboxes'
+    },
+    {
+      title: 'Stations',
+      url: '/stations',
+      icon: 'map'
     }
   ];
 

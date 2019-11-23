@@ -46,6 +46,9 @@ const routes: Routes = [
   {
     path: 'topics',
     loadChildren: () => import('./chat/topics/topics.module').then( m => m.TopicsPageModule)
+  },  {
+    path: 'stations',
+    loadChildren: () => import('./stations/stations.module').then( m => m.StationsPageModule)
   }
 
 
