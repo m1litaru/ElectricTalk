@@ -1,14 +1,14 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home"></ion-back-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Add Car</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-list lines="full">
+  <ion-grid>
     <ion-item>
       <ion-label>Company</ion-label>
       <ion-input required type="text" placeholder="Volswagen, BMW" slot="end" [(ngModel)]="car.company" [ngModelOptions]="{standalone: true}"></ion-input>
@@ -29,6 +29,6 @@
       <div>Last Technical Revision</div>
       <ion-datetime required display-format="DD-MMM-YYYY" min="2018" placeholder="Date" [(ngModel)]="car.las"></ion-datetime>
     </ion-item>
-  </ion-list>
-  <ion-button expand="full" (click)="addCar()">Save</ion-button>
+  </ion-grid>
+  <ion-button expand="full" (click)="addCar()" shape="round" strong="true">Save</ion-button>
 </ion-content>

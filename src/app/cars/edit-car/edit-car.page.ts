@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Car } from '../Car';
+import { Car } from '../../models/car';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -14,7 +14,7 @@ export class EditCarPage implements OnInit {
     company: 'BMW',
     year: 2019,
     autonomy: 0,
-    batteryLeft: "25%",
+    batteryLeft: 0.25,
     lastTechRevision: new Date().toLocaleDateString(),
     userId: 'mmm',
     id: 'myId',

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -31,12 +31,22 @@
             {{car.lastTechRevision}}
           </ion-col>
         </ion-row>
+        <ion-row>
+          <ion-col>
+            
+          </ion-col>
+          <ion-col>
+            {{car.year}}
+          </ion-col>
+        </ion-row>
       </ion-grid>
     </ion-item>
+    <ion-button color="primary" expand="full" shape="round" class="login" strong="true" (click)="goToPage('/add-car')">Add new car</ion-button>
   </ion-list>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/add-car" routerDirection="forward">
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button routerLink="/add-car" routerDirection="forward">
+      <ion-label>Add new car</ion-label>
       <ion-icon name="add"></ion-icon>
    </ion-fab-button>
-  </ion-fab>
+  </ion-fab> -->
 </ion-content>

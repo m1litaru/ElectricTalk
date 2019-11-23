@@ -1,5 +1,6 @@
 ion-content{
-    --background: url("../../../assets/image/HomeBackground.jpg");  
+    --background: url("../../../assets/image/HomeBackground.jpg");
+    opacity: 80%;
 }
 ion-list{
     display: block;
@@ -8,7 +9,9 @@ ion-list{
     opacity: 80%;
 }
 img{
-    height: 100px;
-    margin-right: 25px;
+    width: 150px;
     opacity: 100%;
+}
+ion-button {
+    margin-top: 20px;
 }
