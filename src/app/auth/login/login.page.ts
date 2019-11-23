@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-login',
@@ -40,6 +39,7 @@ export class LoginPage implements OnInit {
     this.http.post("/api/Auth/Login", data_register ,header_register)
     .subscribe(data => {
       console.log(data);
+      console.log(this.appComponent.appPages)
       this.goToPage('/list');
     }, error => {
       console.log(error);

@@ -9,10 +9,17 @@ import { Category } from 'src/app/models/category';
   styleUrls: ['forum.page.scss']
 })
 export class ForumPage implements OnInit {
+
+  public icon: string = "chatbubbles";
   private selectedItem: any;
   public categories: Array<Category> = [];
   constructor(public navCtrl: NavController) {
-    for (let i = 1; i < 11; i++) ;
+    for (let i = 1; i < 12; i++) {
+      this.categories.push({
+        title: "my new category",
+        categories: null
+      })
+    }
   }
 
   goToPage(path: string) {

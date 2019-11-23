@@ -11,6 +11,7 @@ import { Message } from 'src/app/models/Message';
 })
 export class TopicsPage implements OnInit {
 
+  public icon: string = "chatbubbles";
   public topics: Array<Topic> = [];
   public messages: Array<Message> = [];
   constructor(public navCtrl: NavController) { 
