@@ -46,10 +46,15 @@ const routes: Routes = [
   {
     path: 'topics',
     loadChildren: () => import('./chat/topics/topics.module').then( m => m.TopicsPageModule)
+  },
+  {
+    path: 'messages',
+    loadChildren: () => import('./chat/messages/messages.module').then( m => m.MessagesPageModule)
   },  {
     path: 'stations',
     loadChildren: () => import('./stations/stations.module').then( m => m.StationsPageModule)
   }
+
 
 
 
