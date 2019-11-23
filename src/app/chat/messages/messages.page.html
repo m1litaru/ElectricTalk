@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -10,15 +10,11 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ion-grid class="messages-list">
     <ion-item *ngFor="let message of messages">
-      <ion-icon [name]='car' slot="start"></ion-icon>
-      {{message.title}} {{message.content}}
+      <ion-icon [name]="icon" slot="start"></ion-icon>
+        {{message.title}}
     </ion-item>
-  </ion-list>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button routerLink="/add-message" routerDirection="forward">
-      <ion-icon name="add"></ion-icon>
-   </ion-fab-button>
-  </ion-fab>
+  </ion-grid>
+  <ion-button expand="full" shape="round" strong="true" position="fixed">Add message</ion-button>
 </ion-content>

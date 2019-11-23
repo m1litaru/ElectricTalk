@@ -1,15 +1,19 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
+    <ion-menu color="primary" contentId="main-content" type="overlay">
       <ion-header>
-        <ion-toolbar>
+        <ion-toolbar color="primary">
           <ion-title>Menu</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content>
+        <div>
+          <img src="http://s.gravatar.com/avatar/41a314741fb8ba18b9fe5734510cb0bb?s=80"/>
+          <!-- this.profilePicture = "https://www.gravatar.com/avatar/" + md5(this.email.toLowerCase(), 'hex'); -->
+        </div>
         <ion-list>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+            <ion-item color="primary" [routerDirection]="'root'" [routerLink]="[p.url]" class="menu-item">
               <ion-icon slot="start" [name]="p.icon"></ion-icon>
               <ion-label>
                 {{p.title}}
@@ -17,6 +21,13 @@
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
+        <div class="footer">
+            <div class="footer-nav">
+                <ul>
+                    <li (click)="leaveAReview()">Like this app? Leave a review!</li>
+                </ul>
+            </div>
+        </div>
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>

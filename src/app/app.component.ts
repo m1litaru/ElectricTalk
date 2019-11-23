@@ -14,7 +14,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class AppComponent {
   public appPages = [
     {
-      title: 'Home',
+      title: 'User',
       url: '/home',
       icon: 'home'
     },
