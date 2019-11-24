@@ -72,16 +72,8 @@ export class AppComponent {
 
       this.http.get("/api/Auth/Me", header_register)
         .subscribe(data => {
-
-          if(data['firstName'] != undefined && data['lastName'] != undefined) {
-            // this.userName = data['firstName'].toString() + " " + data['lastName'].toString();
-            this.storage.set("name", data['firstName'].toString() + " " + data['lastName'].toString());
-            this.storage.get("name").then( name => {
-              this.userName = name;
-            })
-          }
-          
           if(data['email'] != undefined) {
+            this.userName = data['email'].toString();
             this.gravatarUrl = "https://www.gravatar.com/avatar/" + Md5.hashStr(data['email']).toString();
             console.log(this.gravatarUrl);
           }

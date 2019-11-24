@@ -1,0 +1,21 @@
+ion-content{
+    --background: url("../../../assets/image/HomeBackground.jpg");  
+}
+
+ion-grid{
+    display: block;
+    // width: 100%;
+    opacity: 90%;
+}
+
+ion-item{
+    border-radius: 15px;
+    vertical-align: center;
+    margin-bottom: 5px;
+}
+
+ion-button{
+    opacity: 80%;
+    margin-top: 30px;
+    border-radius: 25px;
+}
