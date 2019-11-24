@@ -34,6 +34,6 @@
         <ion-datetime required display-format="DD-MMM-YYYY" min="2018" placeholder="Date" [(ngModel)]="car.las"></ion-datetime>
       </ion-item>
     </ion-grid>
-    <ion-button class="save" expand="full" (click)="saveTodo()" shape="round" strong="true">Save</ion-button>
-    <ion-button color="danger" expand="full" (click)="deleteCar()" shape="round" strong="true">Delete</ion-button>
+    <ion-button class="save" expand="full" (click)="carEditPOST()" shape="round" strong="true">Save</ion-button>
+    <ion-button color="danger" expand="full" (click)="carDelete()" shape="round" strong="true">Delete</ion-button>
   </ion-content>

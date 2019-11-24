@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NavController, AngularDelegate } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
@@ -22,7 +22,6 @@ export class ListPage implements OnInit {
     private navCtrl: NavController,
     private storage: Storage
     ) {
-
   }
 
   loadIcons(){
@@ -60,4 +59,40 @@ export class ListPage implements OnInit {
         });
     });
   }
+  getCarDetails(carId: string){
+    this.storage.get("token").then(token => {
+      let header_car = {
+        headers: new HttpHeaders({
+          "accept": "application/json",
+          'Authorization': 'Bearer ' + token,
+          'TEAM_KEY': "BA7HSEYKGEGFY"
+        })}
+
+        this.http.get('/api/Cars/' + carId, header_car)
+        .subscribe(data  => {
+          console.log(data);
+          this.storage.set('carId', data['id']);
+          this.navCtrl.navigateForward('/edit-car');
+        },error => {
+          console.log(error);
+        });
+    });
+  }
 }
+  // ngOnInit() {
+  //   for (let i = 1; i < 4; i++) {
+  //     this.cars.push({
+  //       model: "aaa",  
+  //       company: i%4 ? 'BMW' : 'Mercedes',
+  //       year: 2019,
+  //       autonomy: 0,
+  //       batteryLeft: 0.25,
+  //       lastTechRevision: new Date().toLocaleDateString(),
+  //       userId: 'mmm',
+  //       id: 'myId',
+  //       icon: this.audiIcon
+  //       //icon: this.cars[i].company == 'BMW' ? this.BMWIcon : this.cars[i].company == 'Mercedes' ? this.mercedesIcon : this.audiIcon
+  //     });
+  //   }
+  //   //this.loadIcons();
+  // }

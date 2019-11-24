@@ -20,10 +20,12 @@ export class EditAccountPage implements OnInit {
 
   constructor(private http: HttpClient, private navCtrl: NavController, private storage: Storage) { }
 
-  ngOnInit() {
+  ionViewWillEnter() {
     this.editAccountInfo();
   }
   
+  ngOnInit(){}
+
   editAccountInfo() {
     this.storage.get("token")
     .then(token => {

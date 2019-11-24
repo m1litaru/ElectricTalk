@@ -30,7 +30,6 @@ export class AddCarPage implements OnInit {
   }
   addCarRequest(){
     this.storage.get("token").then(token => {
-
       let data_car = {
         company: this.car.company,
         model: this.car.model,
@@ -48,14 +47,17 @@ export class AddCarPage implements OnInit {
           'Authorization': 'Bearer ' + token,
           'TEAM_KEY': "BA7HSEYKGEGFY"
         })}
+        console.log(header_car.headers);
 
         this.http.post('/api/Cars',data_car, header_car)
         .subscribe(data => {
+          console.log("fm");
           this.navCtrl.navigateForward('/list');
         },error => {
           console.log(error);
         });
-    });
+    },error => {
+      console.log(error)});
   }
   ngOnInit() {
   }

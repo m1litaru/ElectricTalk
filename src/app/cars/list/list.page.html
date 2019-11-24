@@ -11,10 +11,7 @@
 
 <ion-content>
   <ion-grid class="list">
-    <div class="list"> 
-      
-    </div>
-    <ion-item (click)="goToPage('/edit-car')" *ngFor="let car of cars">
+    <ion-item (click)="getCarDetails(car.id)" *ngFor="let car of cars">
       <img src="{{car.icon}}">
       <ion-grid class="car">
         <ion-row>
