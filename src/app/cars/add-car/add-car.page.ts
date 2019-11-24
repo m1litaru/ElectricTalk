@@ -39,8 +39,6 @@ export class AddCarPage implements OnInit {
         batteryLeft: 1
       }
 
-      console.log(data_car)
-
       let header_car = {
         headers: new HttpHeaders({
           "accept": "application/json",
