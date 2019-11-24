@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NavController, AngularDelegate } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
@@ -21,7 +21,6 @@ export class ListPage implements OnInit {
     private navCtrl: NavController,
     private storage: Storage
     ) {
-
   }
 
   loadIcons(){
@@ -37,7 +36,6 @@ export class ListPage implements OnInit {
   }
 
   ionViewWillEnter(){
-    console.log("orice");
     this.storage.get("token").then(token => {
 
       let header_car = {
@@ -58,7 +56,26 @@ export class ListPage implements OnInit {
         });
     });
   }
+  getCarDetails(carId: string){
+    this.storage.get("token").then(token => {
+      let header_car = {
+        headers: new HttpHeaders({
+          "accept": "application/json",
+          'Authorization': 'Bearer ' + token,
+          'TEAM_KEY': "BA7HSEYKGEGFY"
+        })}
 
+        this.http.get('/api/Cars/' + carId, header_car)
+        .subscribe(data  => {
+          console.log(data);
+          this.storage.set('carId', data['id']);
+          this.navCtrl.navigateForward('/edit-car');
+        },error => {
+          console.log(error);
+        });
+    });
+  }
+}
   // ngOnInit() {
   //   for (let i = 1; i < 4; i++) {
   //     this.cars.push({
@@ -76,4 +93,3 @@ export class ListPage implements OnInit {
   //   }
   //   //this.loadIcons();
   // }
-}
