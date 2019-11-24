@@ -18,27 +18,28 @@ export class AddCarPage implements OnInit {
     ) {}
  
   private car: Car = {
-    company: "BMW",
-    model: "I8",  
+    company: null,
+    model: null,  
     year: 2019,
     autonomy: 500,
     batteryLeft: 100,
     lastTechRevision: new Date().toLocaleDateString(),
-    userId: 'mmm',
-    id: 'myId',
+    userId: '',
+    id: '',
     icon: ''
   }
   addCarRequest(){
     this.storage.get("token").then(token => {
-
       let data_car = {
         company: this.car.company,
         model: this.car.model,
-        year: this.car.year,
+        year: new Date(this.car.year).getFullYear(),
         autonomy: this.car.autonomy,
         lastTechRevision: new Date(this.car.lastTechRevision).toLocaleDateString(),
         batteryLeft: 1
       }
+
+      console.log(data_car)
 
       let header_car = {
         headers: new HttpHeaders({
@@ -46,15 +47,17 @@ export class AddCarPage implements OnInit {
           'Authorization': 'Bearer ' + token,
           'TEAM_KEY': "BA7HSEYKGEGFY"
         })}
+        console.log(header_car.headers);
 
         this.http.post('/api/Cars',data_car, header_car)
         .subscribe(data => {
-          console.log(data);
+          console.log("fm");
           this.navCtrl.navigateForward('/list');
         },error => {
           console.log(error);
         });
-    });
+    },error => {
+      console.log(error)});
   }
   ngOnInit() {
   }

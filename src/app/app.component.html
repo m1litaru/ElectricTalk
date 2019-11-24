@@ -9,9 +9,9 @@
       <ion-content>
         <div>
           <img src="{{gravatarUrl}}"/>
-          <ion-item class="user-name" (click)="goToPage('/edit-account')">
+          <div class="ion-text-center" menuClose color="primary" class="user-name" (click)="goToPage('/edit-account')">
             {{userName}}
-          </ion-item>
+          </div>
         </div>
         <ion-grid>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
@@ -23,13 +23,6 @@
             </ion-item>
           </ion-menu-toggle>
         </ion-grid>
-        <div class="footer">
-            <div class="footer-nav">
-                <ul>
-                    <li (click)="leaveAReview()">Like this app? Leave a review!</li>
-                </ul>
-            </div>
-        </div>
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>

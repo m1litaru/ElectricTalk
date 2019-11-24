@@ -22,8 +22,15 @@ ion-input{
     width:250px;
 }
 
+.save{
+    margin-top:50px;
+}
+
+.delete{
+    background-color: red;
+}
+
 ion-button{
     opacity: 75%;
-    margin-top:50px;
     border-radius: 25px;
 }

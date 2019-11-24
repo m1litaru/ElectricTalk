@@ -34,6 +34,10 @@ export class EditCarPage implements OnInit {
     this.carEditGET();
   }
 
+  ionViewWillEnter(){
+    
+  }
+
   carEditGET() {
     this.storage.get("token")
     .then(token => {
