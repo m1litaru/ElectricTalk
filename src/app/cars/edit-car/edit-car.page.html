@@ -1,7 +1,7 @@
 <ion-header>
     <ion-toolbar color="primary">
       <ion-buttons slot="start">
-        <ion-back-button defaultHref="/home"></ion-back-button>
+        <ion-back-button defaultHref="/list"></ion-back-button>
       </ion-buttons>
       <ion-title>Edit Car</ion-title>
     </ion-toolbar>
@@ -34,5 +34,6 @@
         <ion-datetime required display-format="DD-MMM-YYYY" min="2018" placeholder="Date" [(ngModel)]="car.las"></ion-datetime>
       </ion-item>
     </ion-grid>
-    <ion-button expand="full" (click)="saveTodo()" shape="round" strong="true">Save</ion-button>
+    <ion-button class="save" expand="full" (click)="saveTodo()" shape="round" strong="true">Save</ion-button>
+    <ion-button color="danger" expand="full" (click)="deleteCar()" shape="round" strong="true">Delete</ion-button>
   </ion-content>
