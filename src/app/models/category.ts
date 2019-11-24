@@ -1,7 +1,6 @@
 export class Category {
 
-    public categories: Array<Category>;
-    constructor(public title: string){
+    constructor(public title: string, public categories: Array<Category>){
 
     }
 }
