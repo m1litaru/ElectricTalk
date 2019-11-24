@@ -13,8 +13,8 @@
   <ion-grid class="categories-list">
     <ion-item (click)="goToPage('/messages')" *ngFor="let topic of topics">
       <ion-icon [name]="icon" slot="start"></ion-icon>
-      Militaru
+      {{topic.title}}
     </ion-item>
   </ion-grid>
-  <ion-button expand="full" shape="round" strong="true" position="fixed">Add topic</ion-button>
+  <ion-button (click)="goToPage('/add-topic')" expand="full" shape="round" strong="true" position="fixed">Add topic</ion-button>
 </ion-content>

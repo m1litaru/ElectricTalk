@@ -54,7 +54,12 @@ const routes: Routes = [
   {
     path: 'edit-account',
     loadChildren: () => import('./auth/edit-account/edit-account.module').then( m => m.EditAccountPageModule)
+  },
+  {
+    path: 'add-topic',
+    loadChildren: () => import('./chat/add-topic/add-topic.module').then( m => m.AddTopicPageModule)
   }
+
 ];
 
 @NgModule({

@@ -24,19 +24,15 @@ export class ListPage implements OnInit {
     ) {
   }
 
-  loadIcons(){
-    for(let i = 1; i < 4; i++) {
-      this.cars[i].icon = this.cars[i].company == 'BMW' ? this.BMWIcon : this.cars[i].company == 'Mercedes' ? this.mercedesIcon : this.audiIcon
-    }
-  }
-
   goToPage(path: string) {
     this.navCtrl.navigateForward(path);
   }
   ngOnInit(){
+    
   }
 
   ionViewWillEnter(){
+    this.cars = [];
     this.storage.get("token").then(token => {
       let header_car = {
         headers: new HttpHeaders({
@@ -60,6 +56,7 @@ export class ListPage implements OnInit {
     });
   }
   getCarDetails(carId: string){
+    this.cars = [];
     this.storage.get("token").then(token => {
       let header_car = {
         headers: new HttpHeaders({
@@ -79,20 +76,3 @@ export class ListPage implements OnInit {
     });
   }
 }
-  // ngOnInit() {
-  //   for (let i = 1; i < 4; i++) {
-  //     this.cars.push({
-  //       model: "aaa",  
-  //       company: i%4 ? 'BMW' : 'Mercedes',
-  //       year: 2019,
-  //       autonomy: 0,
-  //       batteryLeft: 0.25,
-  //       lastTechRevision: new Date().toLocaleDateString(),
-  //       userId: 'mmm',
-  //       id: 'myId',
-  //       icon: this.audiIcon
-  //       //icon: this.cars[i].company == 'BMW' ? this.BMWIcon : this.cars[i].company == 'Mercedes' ? this.mercedesIcon : this.audiIcon
-  //     });
-  //   }
-  //   //this.loadIcons();
-  // }

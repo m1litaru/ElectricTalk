@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { User } from 'src/app/models/user';
 import { Category } from 'src/app/models/category';
-import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-forum',
@@ -10,43 +9,45 @@ import { Storage } from '@ionic/storage';
   styleUrls: ['forum.page.scss']
 })
 export class ForumPage implements OnInit {
-
-  public icon: string = "chatbubbles";
+  private icon: string = "chatboxes";
   private selectedItem: any;
   public categories: Array<Category> = [];
-  constructor(
-    public navCtrl: NavController, 
-    private http: HttpClient,
-    private storage: Storage) {
+  constructor(public navCtrl: NavController) {
+    for (let i = 1; i < 11; i++) {
+      this.categories.push({
+        title: "Category No."+i,
+        categories: null
+      });
+    }
+  }
+
+  goToPage(path: string) {
+    this.navCtrl.navigateForward(path);
   }
 
   ngOnInit() {
-    this.viewCategories();
   }
+
+  // viewCategories(){
+  //   this.storage.get("token").then(token => {
+  //     let header_forum = {
+  //       headers: new HttpHeaders({
+  //         "accept": "application/json",
+  //         'Authorization': 'Bearer ' + token,
+  //         'TEAM_KEY': "BA7HSEYKGEGFY"
+  //       })}
+
+  //       this.http.get('/api/Forum/Category', header_forum)
+  //       .subscribe(data  => {
+  //         let list = Object.values(data);
+  //         console.log(data)
+  //         list.forEach(category => {
+  //           this.categories.push(category);
+  //         });
+  //       },error => {
+  //         console.log(error);
+  //       });
+  //   });
+  // }
   
-  viewCategories(){
-    this.storage.get("token").then(token => {
-      let header_forum = {
-        headers: new HttpHeaders({
-          "accept": "application/json",
-          'Authorization': 'Bearer ' + token,
-          'TEAM_KEY': "BA7HSEYKGEGFY"
-        })}
-
-        this.http.get('/api/Forum/Category', header_forum)
-        .subscribe(data  => {
-          let list = Object.values(data);
-          console.log(data)
-          list.forEach(category => {
-            this.categories.push(category);
-          });
-        },error => {
-          console.log(error);
-        });
-    });
-  }
-
-  goToPage(path: string){
-    this.navCtrl.navigateForward(path);
-  }
 }

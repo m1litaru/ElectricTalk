@@ -18,35 +18,58 @@ export class TopicsPage implements OnInit {
   constructor(
     public navCtrl: NavController, 
     private http: HttpClient,
-    private storage: Storage
-  ) { 
+    private storage: Storage) { 
+      this.messages.push({
+        title: "Ce faci?",
+        content: "Cat mai ai pana la statie?"
+      });
+      this.messages.push({
+        title: "Aloo",
+        content: "Cat mai ai pana la statie?"
+      });
+      this.messages.push({
+        title: "Salut!",
+        content: "Cate masini electrice ai?"
+      });
+      this.topics.push({
+        title: "Intrebari",
+        messages: this.messages
+      });
+      this.topics.push({
+        title: "Combustibil",
+        messages: this.messages
+      });
+      this.topics.push({
+        title: "Noutati",
+        messages: this.messages
+      });
   }
 
   ngOnInit() {
-    this.viewTopics();
+    // this.viewTopics();
   }
 
-  viewTopics(){
-    this.storage.get("token").then(token => {
-      let header_forum = {
-        headers: new HttpHeaders({
-          "accept": "application/json",
-          'Authorization': 'Bearer ' + token,
-          'TEAM_KEY': "BA7HSEYKGEGFY"
-        })}
+  // viewTopics(){
+  //   this.storage.get("token").then(token => {
+  //     let header_forum = {
+  //       headers: new HttpHeaders({
+  //         "accept": "application/json",
+  //         'Authorization': 'Bearer ' + token,
+  //         'TEAM_KEY': "BA7HSEYKGEGFY"
+  //       })}
 
-        this.http.get('/api/Forum/Topics', header_forum)
-        .subscribe(data  => {
-          let list = Object.values(data);
-          console.log(data)
-          list.forEach(topic => {
-            this.topics.push(topic);
-          });
-        },error => {
-          console.log(error);
-        });
-    });
-  }
+  //       this.http.get('/api/Forum/Topics', header_forum)
+  //       .subscribe(data  => {
+  //         let list = Object.values(data);
+  //         console.log(data)
+  //         list.forEach(topic => {
+  //           this.topics.push(topic);
+  //         });
+  //       },error => {
+  //         console.log(error);
+  //       });
+  //   });
+  // }
 
   goToPage(path: string) {
     this.navCtrl.navigateForward(path);
