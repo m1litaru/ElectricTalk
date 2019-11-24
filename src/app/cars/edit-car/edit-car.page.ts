@@ -59,7 +59,7 @@ export class EditCarPage implements OnInit {
               this.car.year = data['year'];
               this.car.autonomy = data['autonomy'];
               this.car.batteryLeft = data['batteryLeft'];
-              this.car.lastTechRevision = data['modlastTechRevisionel'];
+              this.car.lastTechRevision = new Date(data['lastTechRevision']).toLocaleDateString();
           }, error => {
           console.log(error);
         });

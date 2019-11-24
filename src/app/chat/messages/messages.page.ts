@@ -13,8 +13,8 @@ export class MessagesPage implements OnInit {
   constructor() {
     for (let i = 1; i < 15; i++) {
       this.messages.push({
-        title: "Adi" + i,
-        content: "ambnc"
+        title: "Intrebarea nr." + i,
+        content: "Continut"
       });
     } 
   }

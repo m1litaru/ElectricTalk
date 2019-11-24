@@ -49,7 +49,7 @@ export class AddCarPage implements OnInit {
 
         this.http.post('/api/Cars',data_car, header_car)
         .subscribe(data => {
-          console.log("fm");
+          console.log(data);
           this.navCtrl.navigateForward('/list');
         },error => {
           console.log(error);
